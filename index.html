@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>个人作品集 · 小和</title>
+  <meta name="description" content="个人作品集：个人介绍、技能方向与项目作品展示。" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="layout">
+
+    <!-- ======== 左侧：个人介绍 + 技能 + 导航 ======== -->
+    <header class="sidebar" id="sidebar">
+      <div class="sidebar-inner">
+        <div class="avatar">
+          <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=minimal%20professional%20portrait%20illustration%20of%20a%20young%20frontend%20developer%2C%20soft%20gradient%20background%2C%20modern%20flat%20style&image_size=square" alt="个人头像" loading="lazy" />
+        </div>
+        <h1 class="name">小和</h1>
+        <p class="tagline">软件工程专业 · 关注 AI 辅助开发与大语言模型应用</p>
+
+        <div class="skills">
+          <h2 class="side-title skill-title">编程语言</h2>
+          <ul class="skill-list">
+            <li>Python</li>
+            <li>Java</li>
+            <li>TypeScript</li>
+            <li>HTML / CSS</li>
+          </ul>
+        </div>
+
+        <div class="skills">
+          <h2 class="side-title skill-title">关注方向</h2>
+          <ul class="skill-list">
+            <li>AI 辅助开发</li>
+            <li>大语言模型应用</li>
+            <li>前后端开发</li>
+            <li>数据可视化</li>
+            <li>AI 应用构建</li>
+          </ul>
+        </div>
+
+        <nav class="side-nav" aria-label="站点导航">
+          <a href="#works" class="nav-link active">项目作品</a>
+          <a href="#about" class="nav-link">关于我</a>
+          <a href="#contact" class="nav-link">联系方式</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ======== 右侧：主内容区 ======== -->
+    <main class="content">
+      <!-- 项目作品 -->
+      <section id="works" class="section works-section">
+        <div class="section-head">
+          <span class="section-index">01</span>
+          <h2 class="section-title">项目作品</h2>
+          <p class="section-sub">以下是我在课程实践与个人项目中完成的一些代表性作品，纵向浏览了解我的实践方向。</p>
+        </div>
+        <div id="projects" class="projects">
+          <!-- 项目由 js/main.js 动态渲染 -->
+        </div>
+      </section>
+
+      <!-- 关于我 -->
+      <section id="about" class="section about-section">
+        <div class="section-head">
+          <span class="section-index">02</span>
+          <h2 class="section-title">关于我</h2>
+        </div>
+        <div class="about-body">
+          <p>
+            我叫尹炜权，是一名软件工程专业学生，目前主要关注 AI 辅助开发与大语言模型技术。
+            平时主要使用 Python、Java 和 TypeScript 进行项目开发，也在持续学习前后端开发、数据可视化和 AI 应用构建。
+          </p>
+          <p>
+            现就读于广州软件学院，坐标中国·广州，期待将所学转化为真实、有价值的线上作品。
+          </p>
+        </div>
+      </section>
+
+      <!-- 联系方式 -->
+      <section id="contact" class="section contact-section">
+        <div class="section-head">
+          <span class="section-index">03</span>
+          <h2 class="section-title">联系方式</h2>
+        </div>
+        <ul class="contact-list">
+          <li><span class="contact-label">邮箱</span><a href="mailto:xiaohe@example.com">xiaohe@example.com</a></li>
+          <li><span class="contact-label">微信</span><span class="contact-value">xiaohezi</span></li>
+          <li><span class="contact-label">GitHub</span><a href="https://github.com/xiaohe-dev" target="_blank" rel="noopener">github.com/xiaohe-dev</a></li>
+          <li><span class="contact-label">所在地</span><span class="contact-value">中国·广州</span></li>
+          <li><span class="contact-label">个人主页</span><a href="https://xiaohe.dev" target="_blank" rel="noopener">xiaohe.dev</a></li>
+        </ul>
+      </section>
+
+      <footer class="footer">
+        <p>© 2026 小和 · 作品集。以原生 HTML / CSS / JavaScript 构建。</p>
+      </footer>
+    </main>
+
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

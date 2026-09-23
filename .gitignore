@@ -1,0 +1,14 @@
+# 系统 / 编辑器
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# 日志 / 缓存
+*.log
+*.cache
+node_modules/
+
+# 临时文件
+*.tmp
+*~
