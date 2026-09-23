@@ -19,7 +19,68 @@
   --tag-text: #1d4ed8;    /* 类别标签字 */
   --sidebar-w: 320px;
   --radius: 14px;
+  /* 侧栏渐变与浅色面板元素的配色，主题切换时统一覆盖 */
+  --grad-a: #eef7ff;                 /* 侧栏渐起色 */
+  --chip-bg: rgba(255, 255, 255, 0.6); /* 技能条目背景 */
+  --chip-bg-hover: #ffffff;          /* 技能条目 hover 背景 */
 }
+
+/* ---------- 深色主题 ---------- */
+[data-theme="dark"] {
+  --bg: #0d1826;           /* 页面整体背景：深蓝黑 */
+  --bg-soft: #0f1c2e;      /* 主内容深蓝 */
+  --panel: #132339;        /* 深色面板 */
+  --line: #22385a;         /* 分割线 / 边框：深蓝 */
+  --text: #e8f1fc;         /* 标题文字：亮蓝白 */
+  --text-body: #b7c9e0;    /* 正文 */
+  --text-dim: #8fa7c4;     /* 次要文字 */
+  --accent-a: #60a5fa;     /* 主强调亮蓝 */
+  --accent-b: #93c5fd;     /* 强调更亮 */
+  --accent-soft: rgba(96, 165, 250, 0.16);
+  --sidebar-bg: #142336;   /* 侧栏深蓝底 */
+  --tag-bg: #1d3a5f;       /* 类别标签底 */
+  --tag-text: #bfdbfe;     /* 类别标签字：亮蓝 */
+  --grad-a: #172a41;       /* 侧栏渐起色 */
+  --chip-bg: rgba(255, 255, 255, 0.05);
+  --chip-bg-hover: rgba(96, 165, 250, 0.16);
+}
+
+/* ---------- 主题切换按钮 ---------- */
+.theme-toggle {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--text);
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(15, 40, 92, 0.14);
+  transition: background 0.25s, color 0.25s, border-color 0.25s, transform 0.25s;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent-a);
+  color: var(--accent-a);
+  transform: translateY(-1px);
+}
+
+.theme-toggle .icon {
+  position: absolute;
+  transition: opacity 0.2s, transform 0.25s;
+}
+
+/* 浅色默认显示"月亮"（点击切到深色），深色显示"太阳" */
+.theme-toggle .icon-moon { opacity: 1; }
+.theme-toggle .icon-sun  { opacity: 0; transform: rotate(-90deg) scale(0.6); }
+[data-theme="dark"] .theme-toggle .icon-moon { opacity: 0; transform: rotate(90deg) scale(0.6); }
+[data-theme="dark"] .theme-toggle .icon-sun  { opacity: 1; transform: rotate(0) scale(1); }
 
 * {
   box-sizing: border-box;
@@ -61,7 +122,7 @@ img {
   position: sticky;
   top: 0;
   height: 100vh;
-  background: linear-gradient(180deg, #eef7ff 0%, var(--sidebar-bg) 100%);
+  background: linear-gradient(180deg, var(--grad-a) 0%, var(--sidebar-bg) 100%);
   border-right: 1px solid var(--line);
   padding: 44px 30px;
   overflow: auto;
@@ -137,13 +198,13 @@ img {
   border: 1px solid var(--line);
   border-left: 3px solid var(--accent-a);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--chip-bg);
   transition: border-color 0.25s, background 0.25s, transform 0.25s;
 }
 
 .skill-list li:hover {
   border-left-color: var(--accent-b);
-  background: #ffffff;
+  background: var(--chip-bg-hover);
   transform: translateX(4px);
 }
 

@@ -154,8 +154,39 @@ function initNavHighlight() {
   onScroll();
 }
 
+/* ---------- 深浅色主题切换 ---------- */
+function initThemeToggle() {
+  const TOGGLE_KEY = "portfolio-theme";
+  const root = document.documentElement;
+  const btn = document.getElementById("themeToggle");
+
+  if (!btn) return;
+
+  // 初始化：优先读取用户上次选择，其次跟随系统偏好
+  let saved = null;
+  try {
+    saved = localStorage.getItem(TOGGLE_KEY);
+  } catch (e) {
+    /* localStorage 不可用时忽略 */
+  }
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const theme = saved || (prefersDark ? "dark" : "light");
+  root.setAttribute("data-theme", theme);
+
+  btn.addEventListener("click", () => {
+    const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try {
+      localStorage.setItem(TOGGLE_KEY, next);
+    } catch (e) {
+      /* 忽略存储失败 */
+    }
+  });
+}
+
 /* ---------- 初始化 ---------- */
 document.addEventListener("DOMContentLoaded", () => {
   renderProjects();
   initNavHighlight();
+  initThemeToggle();
 });
