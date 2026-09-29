@@ -7,7 +7,11 @@ Thumbs.db
 # 日志 / 缓存
 *.log
 *.cache
+__pycache__/
 node_modules/
+
+# 无关的临时目录
+chaozhuorang/
 
 # 临时文件
 *.tmp
